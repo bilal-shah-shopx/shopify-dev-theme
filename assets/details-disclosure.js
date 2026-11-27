@@ -9,6 +9,7 @@ class DetailsDisclosure extends HTMLElement {
   }
 
   onFocusOut() {
+    // Wait for focus to settle before checking whether it left the disclosure.
     setTimeout(() => {
       if (!this.contains(document.activeElement)) this.close();
     });
